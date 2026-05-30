@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Snake | OrangeRed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='../../index.html'">OrangeRed</div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">← Back to Hub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="game-container">
+    <div class="game-wrapper">
+      <div class="game-header">
+        <h1>Neon <span>Snake</span></h1>
+        <div class="score-board">
+          <div class="score-box">
+            <span>Score</span>
+            <div id="score">0</div>
+          </div>
+          <div class="score-box">
+            <span>High Score</span>
+            <div id="high-score">0</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="canvas-container">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="gameOverScreen" class="overlay hidden">
+          <h2>Game Over</h2>
+          <p>Score: <span id="finalScore">0</span></p>
+          <button id="restartBtn">Play Again</button>
+        </div>
+        <div id="startScreen" class="overlay">
+          <h2>Ready?</h2>
+          <p>Use arrow keys or WASD to move.</p>
+          <button id="startBtn">Start Game</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

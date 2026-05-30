@@ -1,0 +1,271 @@
+/* Local styles for Guess the Number, extending the global OrangeRed theme */
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex: 1;
+}
+
+.game-wrapper {
+  background-color: var(--surface-color);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  right: 3rem;
+  transform: scale(0.95);
+  z-index: -1;
+}
+
+/* Typography */
+h1, h2 {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h1 span, h2 span {
+  color: var(--brand-orange);
+  text-shadow: 0 0 10px var(--brand-orange-glow);
+}
+
+p {
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Start Screen specific */
+.difficulty-options {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.diff-btn {
+  flex: 1;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.diff-btn:hover {
+  border-color: var(--brand-orange);
+  background: var(--surface-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px var(--brand-orange-glow);
+}
+
+.diff-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.diff-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Game Screen specific */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1.5rem;
+}
+
+.attempts-box {
+  background: #111;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.attempts-box span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.attempts-box div {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  font-family: 'Outfit', sans-serif;
+}
+
+.game-play-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hint-message {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  min-height: 2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.hint-higher {
+  color: var(--brand-orange);
+  animation: pulse 0.3s ease;
+}
+
+.hint-lower {
+  color: var(--brand-red);
+  animation: pulse 0.3s ease;
+}
+
+.hint-correct {
+  color: #00ff88;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.input-group {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+input[type="number"] {
+  flex: 1;
+  background: #111;
+  border: 2px solid rgba(255,255,255,0.1);
+  color: var(--text-main);
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  outline: none;
+  font-family: var(--font-main);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 15px var(--brand-orange-glow);
+}
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+button {
+  background: linear-gradient(135deg, var(--brand-orange), #ff4400);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 115, 0, 0.4);
+  transition: all 0.2s ease;
+  font-family: var(--font-main);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 115, 0, 0.6);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  background: #333;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.secondary-btn {
+  background: #222;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: none;
+}
+
+.secondary-btn:hover {
+  background: #333;
+  border-color: rgba(255,255,255,0.4);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.game-controls {
+  margin-top: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.game-controls.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

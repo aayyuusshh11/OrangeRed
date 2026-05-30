@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrangeRed - Premium Game Hub</title>
+  <meta name="description" content="Play exciting mini-games on OrangeRed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">OrangeRed</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Games</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero animate-in">
+      <h1>Welcome to <span>OrangeRed</span></h1>
+      <p>A collection of premium mini-games. Select a game below to start playing.</p>
+    </section>
+
+    <div class="games-grid">
+      <!-- Game Card: Snake -->
+      <a href="games/snake/index.html" class="game-card animate-in delay-1">
+        <div class="game-icon">🐍</div>
+        <h2>Neon Snake</h2>
+        <p>The classic snake game reimagined with a sleek, vibrant aesthetic. Eat the glowing dots and grow as long as you can.</p>
+        <div class="play-badge">Play Now →</div>
+      </a>
+      
+      <!-- Game Card: Guess the Number -->
+      <a href="games/guess-number/index.html" class="game-card animate-in delay-2">
+        <div class="game-icon">🔢</div>
+        <h2>Guess the Number</h2>
+        <p>Test your intuition! Choose a difficulty and try to guess the hidden number in as few attempts as possible.</p>
+        <div class="play-badge">Play Now →</div>
+      </a>
+
+      <!-- Placeholder for future games -->
+      <a href="#" class="game-card animate-in delay-3" style="opacity: 0.5; pointer-events: none;">
+        <div class="game-icon">❓</div>
+        <h2>Coming Soon</h2>
+        <p>More exciting games are in development. Check back later for new additions to the OrangeRed collection.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 OrangeRed Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number | OrangeRed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='../../index.html'">OrangeRed</div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">← Back to Hub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="game-container">
+    <div class="game-wrapper">
+      
+      <!-- Start Screen (Difficulty Selection) -->
+      <div id="startScreen" class="screen animate-in">
+        <h1>Guess the <span>Number</span></h1>
+        <p>Select your difficulty to begin. A random number will be generated for you to guess!</p>
+        
+        <div class="difficulty-options">
+          <button class="diff-btn" data-digits="2">
+            <span class="diff-title">Easy</span>
+            <span class="diff-desc">2 Digit Number (10 - 99)</span>
+          </button>
+          <button class="diff-btn" data-digits="3">
+            <span class="diff-title">Hard</span>
+            <span class="diff-desc">3 Digit Number (100 - 999)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Game Screen -->
+      <div id="gameScreen" class="screen hidden">
+        <div class="game-header">
+          <h2>Find the <span>Number</span></h2>
+          <div class="attempts-box">
+            <span>Attempts</span>
+            <div id="attemptsCount">0</div>
+          </div>
+        </div>
+
+        <div class="game-play-area">
+          <div id="hintMessage" class="hint-message">I'm thinking of a number...</div>
+          
+          <div class="input-group">
+            <input type="number" id="guessInput" placeholder="Enter your guess..." autofocus>
+            <button id="submitBtn">Guess</button>
+          </div>
+        </div>
+        
+        <div id="gameControls" class="game-controls hidden">
+          <button id="playAgainBtn" class="secondary-btn">Play Again</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
