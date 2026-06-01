@@ -77,8 +77,18 @@ function spawnFood() {
   var minY = Math.ceil(canvasRect.top / GRID);
   var maxY = Math.floor((canvasRect.bottom - GRID) / GRID);
 
+  // calculate speed factor: 0 (slowest / BASE_SPEED) to 1 (fastest / MIN_SPEED)
+  var speedFactor = (BASE_SPEED - speed) / (BASE_SPEED - MIN_SPEED);
+  if (speedFactor < 0) speedFactor = 0;
+  if (speedFactor > 1) speedFactor = 1;
+
+  var maxPossibleDist = (cherries < 3) ? Math.max(maxX - minX, maxY - minY) : Math.max(cols, rows);
+  var maxAllowedDist = 5 + speedFactor * (maxPossibleDist - 5);
+
+  var head = snake[0];
+
   while (tries < 500) {
-    if (cherries < 2) {
+    if (cherries < 3) {
       // stay inside the canvas box
       foodX = minX + Math.floor(Math.random() * (maxX - minX + 1));
       foodY = minY + Math.floor(Math.random() * (maxY - minY + 1));
@@ -87,6 +97,15 @@ function spawnFood() {
       foodX = 1 + Math.floor(Math.random() * (cols - 2));
       foodY = 1 + Math.floor(Math.random() * (rows - 2));
     }
+
+    // check distance relative to speed (Manhattan distance)
+    var dist = Math.abs(foodX - head.x) + Math.abs(foodY - head.y);
+    var maxAllowedDistAdjusted = maxAllowedDist + (tries * 0.5); // relax limit over tries to guarantee spawning space
+    if (dist > maxAllowedDistAdjusted) {
+      tries++;
+      continue;
+    }
+
     tries++;
     var onSnake = false;
     for (var i = 0; i < snake.length; i++) {
@@ -138,7 +157,7 @@ function tick() {
   var h = snake[0];
 
   // boundary depends on phase
-  if (cherries < 2) {
+  if (cherries < 3) {
     // restricted to the original canvas grid
     var minX = Math.ceil(canvasRect.left / GRID);
     var maxX = Math.floor((canvasRect.right - GRID) / GRID);
