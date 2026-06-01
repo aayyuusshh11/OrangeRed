@@ -15,8 +15,7 @@
     <div class="logo" onclick="window.location.href='../../index.html'">OrangeRed</div>
     <nav>
       <ul>
-        <li><a href="../../index.html">Games</a></li>
-        <li><a href="../../index.html#">About</a></li>
+        <li><a href="../../index.html">← back</a></li>
       </ul>
     </nav>
   </header>
@@ -25,7 +24,7 @@
     <div class="game-container animate-in">
       <div class="game-header">
         <h1>Book <span>Cricket</span></h1>
-        <p>You vs. The Bot</p>
+        <p>You vs a bot. One innings each.</p>
       </div>
 
       <div class="scoreboard">
@@ -61,16 +60,16 @@
 
         <div class="controls">
           <button id="flip-btn" class="primary-btn">Flip Book</button>
-          <div id="game-status" class="status-message">Your turn! Flip the book to score.</div>
+          <div id="game-status" class="status-message">Flip the book to score.</div>
         </div>
       </div>
       
       <div class="rules-section">
         <h3>How to Play</h3>
         <ul>
-          <li><strong>Runs:</strong> Last digit of the page is your score (2, 4, 6, 8).</li>
-          <li><strong>Wicket:</strong> If the last digit is 0, you're OUT!</li>
-          <li><strong>Goal:</strong> You bat first. Score as much as possible. Then the bot tries to chase your target!</li>
+          <li>Last digit = your score. Valid: 2, 4, 6, 8. A 0 means you're out.</li>
+          <li>Bat first, then the bot chases your total.</li>
+          <li>If the bot gets out before reaching your score, you win.</li>
         </ul>
       </div>
 
@@ -82,7 +81,7 @@
       <h2 id="modal-title">Game Over</h2>
       <p id="modal-message">Result goes here.</p>
       <button id="restart-btn" class="primary-btn">Play Again</button>
-      <button onclick="window.location.href='../../index.html'" class="secondary-btn">Back to Hub</button>
+      <button onclick="window.location.href='../../index.html'" class="secondary-btn">Back</button>
     </div>
   </div>
 

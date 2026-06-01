@@ -15,7 +15,7 @@
     <div class="logo" onclick="window.location.href='../../index.html'">OrangeRed</div>
     <nav>
       <ul>
-        <li><a href="../../index.html">← Back to Hub</a></li>
+        <li><a href="../../index.html">← back</a></li>
       </ul>
     </nav>
   </header>
@@ -26,7 +26,7 @@
       <!-- Start Screen (Difficulty Selection) -->
       <div id="startScreen" class="screen animate-in">
         <h1>Guess the <span>Number</span></h1>
-        <p>Select your difficulty to begin. A random number will be generated for you to guess!</p>
+        <p>Pick easy or hard. The rest is just guessing.</p>
         
         <div class="difficulty-options">
           <button class="diff-btn" data-digits="2">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="game-play-area">
-          <div id="hintMessage" class="hint-message">I'm thinking of a number...</div>
+          <div id="hintMessage" class="hint-message">I picked a number. Go.</div>
           
           <div class="input-group">
             <input type="number" id="guessInput" placeholder="Enter your guess..." autofocus>
@@ -60,7 +60,7 @@
         </div>
         
         <div id="gameControls" class="game-controls hidden">
-          <button id="playAgainBtn" class="secondary-btn">Play Again</button>
+          <button id="playAgainBtn" class="secondary-btn">Try again</button>
         </div>
       </div>
 

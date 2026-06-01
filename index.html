@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrangeRed - Premium Game Hub</title>
-  <meta name="description" content="Play exciting mini-games on OrangeRed.">
+  <title>OrangeRed — games I made</title>
+  <meta name="description" content="A small collection of browser games made for fun. No logins, no ads, no agenda.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,54 +15,58 @@
     <div class="logo">OrangeRed</div>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Games</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="index.html" class="active">games</a></li>
+        <li><a href="#about">why this exists</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="hero animate-in">
-      <h1>Welcome to <span>OrangeRed</span></h1>
-      <p>A collection of premium mini-games. Select a game below to start playing.</p>
+      <h1>Stuff I built instead of <span>studying.</span></h1>
+      <p>A few small browser games. No accounts, no tracking. Just open one and play.</p>
     </section>
 
     <div class="games-grid">
-      <!-- Game Card: Snake -->
       <a href="games/snake/index.html" class="game-card animate-in delay-1">
         <div class="game-icon">🐍</div>
-        <h2>Neon Snake</h2>
-        <p>The classic snake game reimagined with a sleek, vibrant aesthetic. Eat the glowing dots and grow as long as you can.</p>
-        <div class="play-badge">Play Now →</div>
+        <h2>Snake</h2>
+        <p>Eat food. Get longer. Crash into a wall. Repeat.</p>
+        <div class="play-badge">Play →</div>
       </a>
-      
-      <!-- Game Card: Guess the Number -->
+
       <a href="games/guess-number/index.html" class="game-card animate-in delay-2">
         <div class="game-icon">🔢</div>
         <h2>Guess the Number</h2>
-        <p>Test your intuition! Choose a difficulty and try to guess the hidden number in as few attempts as possible.</p>
-        <div class="play-badge">Play Now →</div>
+        <p>The computer picks a number. You try to act smarter than random chance.</p>
+        <div class="play-badge">Play →</div>
       </a>
 
-      <!-- Game Card: Book Cricket -->
       <a href="games/book-cricket/index.html" class="game-card animate-in delay-3">
         <div class="game-icon">📖</div>
         <h2>Book Cricket</h2>
-        <p>A digital twist on the classic classroom game. Flip the book, score runs based on page numbers, and beat the bot!</p>
-        <div class="play-badge">Play Now →</div>
+        <p>The classroom game that somehow survived the invention of smartphones.</p>
+        <div class="play-badge">Play →</div>
       </a>
 
-      <!-- Placeholder for future games -->
-      <a href="#" class="game-card animate-in delay-4" style="opacity: 0.5; pointer-events: none;">
-        <div class="game-icon">❓</div>
-        <h2>Coming Soon</h2>
-        <p>More exciting games are in development. Check back later for new additions to the OrangeRed collection.</p>
-      </a>
+      <div class="game-card animate-in delay-4" style="opacity: 0.4; cursor: default;">
+        <div class="game-icon">⏳</div>
+        <h2>Something else</h2>
+        <p>Not sure yet. Probably when I have another afternoon free.</p>
+      </div>
     </div>
+
+    <section id="about" style="margin-top: 5rem; max-width: 560px;">
+      <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--text);">Why this exists</h2>
+      <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.7;">
+        I wanted a place to put small games I was building anyway. No framework, no build step for the main page, just HTML and JavaScript.
+        Some parts are rough around the edges. That's fine.
+      </p>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 OrangeRed Hub. All rights reserved.</p>
+    <p>Built for fun, bugs included. — OrangeRed</p>
   </footer>
 
   <script src="script.js"></script>

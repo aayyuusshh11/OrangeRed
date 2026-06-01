@@ -3,54 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neon Snake | OrangeRed</title>
+  <title>Snake | OrangeRed</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <canvas id="vpCanvas"></canvas>
+
   <header>
     <div class="logo" onclick="window.location.href='../../index.html'">OrangeRed</div>
     <nav>
       <ul>
-        <li><a href="../../index.html">← Back to Hub</a></li>
+        <li><a href="../../index.html">← back</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="game-container">
     <div class="game-wrapper">
+      <div class="game-info">
+        <h1>Snake</h1>
+        <p class="game-desc">Eat food. Get longer. Crash into a wall. Repeat.</p>
+      </div>
+
       <div class="game-header">
-        <h1>Neon <span>Snake</span></h1>
         <div class="score-board">
           <div class="score-box">
             <span>Score</span>
             <div id="score">0</div>
           </div>
           <div class="score-box">
-            <span>High Score</span>
+            <span>Cherries</span>
+            <div id="cherry-count">0</div>
+          </div>
+          <div class="score-box">
+            <span>Best</span>
             <div id="high-score">0</div>
           </div>
         </div>
       </div>
-      
+
       <div class="canvas-container">
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
-        <div id="gameOverScreen" class="overlay hidden">
-          <h2>Game Over</h2>
-          <p>Score: <span id="finalScore">0</span></p>
-          <button id="restartBtn">Play Again</button>
-        </div>
-        <div id="startScreen" class="overlay">
-          <h2>Ready?</h2>
-          <p>Use arrow keys or WASD to move.</p>
-          <button id="startBtn">Start Game</button>
-        </div>
+        <canvas id="gameCanvas" width="280" height="280"></canvas>
       </div>
     </div>
   </main>
+
+  <div id="startScreen" class="game-overlay">
+    <div class="overlay-box">
+      <h2>Snake</h2>
+      <p>Arrow keys or WASD. Don't hit the walls.</p>
+      <button id="startBtn">Start</button>
+    </div>
+  </div>
+
+  <div id="gameOverScreen" class="game-overlay hidden">
+    <div class="overlay-box">
+      <h2>You died.</h2>
+      <p>Score: <span id="finalScore">0</span></p>
+      <p class="sub">Cherries: <span id="finalCherries">0</span></p>
+      <button id="restartBtn">Try again</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
