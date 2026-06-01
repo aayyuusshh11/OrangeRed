@@ -143,13 +143,17 @@ function checkBoost() {
     isBoosting = false;
     return;
   }
+  var isUpPressed = pressedKeys['arrowup'] || pressedKeys['w'];
+  var isDownPressed = pressedKeys['arrowdown'] || pressedKeys['s'];
   var isLeftPressed = pressedKeys['arrowleft'] || pressedKeys['a'];
   var isRightPressed = pressedKeys['arrowright'] || pressedKeys['d'];
 
+  var wantUpBoost = (dy === -1 && dx === 0) && isUpPressed;
+  var wantDownBoost = (dy === 1 && dx === 0) && isDownPressed;
   var wantLeftBoost = (dx === -1 && dy === 0) && isLeftPressed;
   var wantRightBoost = (dx === 1 && dy === 0) && isRightPressed;
 
-  var newBoosting = !!(wantLeftBoost || wantRightBoost);
+  var newBoosting = !!(wantUpBoost || wantDownBoost || wantLeftBoost || wantRightBoost);
   if (newBoosting !== isBoosting) {
     isBoosting = newBoosting;
     resetFrameTimeout();
@@ -234,12 +238,6 @@ function drawGridOnce() {
 function render() {
   vctx.clearRect(0, 0, vpCanvas.width, vpCanvas.height);
 
-  // flashy effect if boosting: very light screen tint overlay
-  if (isBoosting) {
-    vctx.fillStyle = 'rgba(255, 170, 100, 0.035)';
-    vctx.fillRect(0, 0, vpCanvas.width, vpCanvas.height);
-  }
-
   // cherry
   var fx = foodX * GRID + GRID / 2;
   var fy = foodY * GRID + GRID / 2;
@@ -267,13 +265,8 @@ function render() {
   vctx.stroke();
 
   // snake
-  if (isBoosting) {
-    vctx.shadowBlur = 14;
-    vctx.shadowColor = '#ffb380';
-  } else {
-    vctx.shadowBlur = 5;
-    vctx.shadowColor = '#d05000';
-  }
+  vctx.shadowBlur = 5;
+  vctx.shadowColor = '#d05000';
   for (var i = 0; i < snake.length; i++) {
     vctx.fillStyle = i === 0 ? '#f08030' : '#c06020';
     vctx.beginPath();
