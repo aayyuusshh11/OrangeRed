@@ -5,7 +5,6 @@ const vctx = vpCanvas.getContext('2d');
 
 const scoreEl = document.getElementById('score');
 const highScoreEl = document.getElementById('high-score');
-const cherryEl = document.getElementById('cherry-count');
 const startScreen = document.getElementById('startScreen');
 const gameOverScreen = document.getElementById('gameOverScreen');
 const startBtn = document.getElementById('startBtn');
@@ -99,7 +98,6 @@ function spawnFood() {
 
 function updateUI() {
   scoreEl.textContent = score;
-  cherryEl.textContent = cherries;
   if (score > highScore) {
     highScore = score;
     highScoreEl.textContent = highScore;

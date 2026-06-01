@@ -43,6 +43,7 @@
 .score-board {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .score-box {
