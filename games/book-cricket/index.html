@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Cricket | OrangeRed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='../../index.html'">OrangeRed</div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Games</a></li>
+        <li><a href="../../index.html#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="game-container animate-in">
+      <div class="game-header">
+        <h1>Book <span>Cricket</span></h1>
+        <p>You vs. The Bot</p>
+      </div>
+
+      <div class="scoreboard">
+        <div class="score-card player-score active-turn">
+          <h3>Player (You)</h3>
+          <div class="score-details">
+            <span class="runs" id="player-runs">0</span>
+            <span class="wickets" id="player-wickets">W: 0</span>
+          </div>
+          <div class="turn-indicator">Batting</div>
+        </div>
+        
+        <div class="score-card bot-score">
+          <h3>Bot</h3>
+          <div class="score-details">
+            <span class="runs" id="bot-runs">0</span>
+            <span class="wickets" id="bot-wickets">W: 0</span>
+          </div>
+          <div class="turn-indicator">Waiting</div>
+        </div>
+      </div>
+
+      <div class="game-area">
+        <div class="book-visual">
+          <div class="book-cover">
+            <span class="book-title">The Book</span>
+          </div>
+          <div class="page-result hidden">
+            <div class="page-number">Page: <span id="current-page">-</span></div>
+            <div class="run-outcome" id="run-outcome">-</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="flip-btn" class="primary-btn">Flip Book</button>
+          <div id="game-status" class="status-message">Your turn! Flip the book to score.</div>
+        </div>
+      </div>
+      
+      <div class="rules-section">
+        <h3>How to Play</h3>
+        <ul>
+          <li><strong>Runs:</strong> Last digit of the page is your score (2, 4, 6, 8).</li>
+          <li><strong>Wicket:</strong> If the last digit is 0, you're OUT!</li>
+          <li><strong>Goal:</strong> You bat first. Score as much as possible. Then the bot tries to chase your target!</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="game-over-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">Game Over</h2>
+      <p id="modal-message">Result goes here.</p>
+      <button id="restart-btn" class="primary-btn">Play Again</button>
+      <button onclick="window.location.href='../../index.html'" class="secondary-btn">Back to Hub</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
